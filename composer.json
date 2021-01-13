@@ -1,0 +1,11 @@
+{
+    "name": "passh/biberro-back",
+    "description": "backend to track food consumed by your baby",
+    "authors": [
+        {
+            "name": "pascual",
+            "email": "pascual.munoz@pccomponentes.com"
+        }
+    ],
+    "require": {}
+}
