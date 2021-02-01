@@ -1,4 +1,4 @@
 index:
-    path: /cosa
-    controller: App\Infrastructure\UI\WebController\HealthController
+    path: /
+    controller: App\Infrastructure\UI\Http\Json\HealthController
 
