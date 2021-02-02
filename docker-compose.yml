@@ -1,0 +1,83 @@
+version: '3.7'
+
+services:
+  nginx:
+    container_name: biberro-nignx
+    build:
+      context: .
+      dockerfile: docker/nginx/Dockerfile
+      target: basic
+    volumes:
+      - ./public:/var/www/html
+    ports:
+      - ${NGINX_PORT}:80
+    depends_on:
+      - php-fpm
+    networks:
+      - network_biberro_service
+
+  php-fpm:
+    container_name: biberro-fpm
+    build:
+      context: .
+      dockerfile: docker/php/Dockerfile
+      target: development
+    environment:
+      - XDEBUG_MODE=${XDEBUG_MODE}
+    volumes:
+      - .:/var/app
+      - ~/.composer:/.composer
+    networks:
+      - network_biberro_service
+#
+#  swagger:
+#    container_name: biberro-swagger
+#    build:
+#      context: .
+#      dockerfile: docker/swagger/Dockerfile
+#    ports:
+#      - ${SWAGGER_PORT}:8080
+#    volumes:
+#      - ./docs/openapi/openapi.yaml:/docs/openapi.yaml:ro
+
+  postgres:
+    container_name: biberro-postgres
+    image: postgres:11-alpine
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DATABASE}
+    ports:
+      - ${POSTGRES_PORT}:5432
+    networks:
+      - network_biberro_service
+
+  adminer:
+    container_name: biberro-adminer
+    image: adminer:latest
+    ports:
+      - ${ADMINER_PORT}:8080
+    networks:
+      - network_biberro_service
+
+  rabbitmq:
+    container_name: biberro-rabbitmq
+    image: rabbitmq:3.7.3-management
+    volumes:
+      - ./docker/rabbitmq/enabled_plugins:/etc/rabbitmq/enabled_plugins
+      - rabbitmq-data:/var/lib/rabbitmq
+    environment:
+      RABBITMQ_DEFAULT_USER: "guest"
+      RABBITMQ_DEFAULT_PASS: "guest"
+    ports:
+      - 5672:5672
+      - 15672:15672
+    networks:
+      - network_biberro_service
+
+networks:
+  network_biberro_service:
+    driver: bridge
+
+volumes:
+  rabbitmq-data:
