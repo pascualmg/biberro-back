@@ -12,8 +12,12 @@ WORKDIR /var/app
 
 FROM basic as development
 RUN apt-get install -y git
-RUN mkdir -p /usr/src/php/ext/xdebug && curl -fsSL https://pecl.php.net/get/xdebug | tar xvz -C "/usr/src/php/ext/xdebug" --strip 1 && docker-php-ext-install xdebug
-RUN docker-php-ext-enable xdebug
+
+RUN pecl install xdebug &&\
+ docker-php-ext-enable xdebug &&\
+ echo "xdebug.mode=debug" >> /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini &&\
+ echo "xdebug.client_host = host.docker.internal" >> /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini
+
 COPY docker/php/config/php_dev.ini /usr/local/etc/php/php.ini
 
 FROM development as test
