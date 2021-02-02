@@ -27,6 +27,9 @@ php -r "unlink('composer-setup.php');" && \
 mv -v /var/app/composer.phar /usr/bin/composer && \
 chmod 755 /usr/bin/composer
 
+#phpunit , symfony way
+RUN composer require --dev symfony/phpunit-bridge
+
 FROM development as test
 ENV APP_ENV=prod
 ADD bin/ ./bin
