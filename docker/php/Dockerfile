@@ -27,8 +27,6 @@ php -r "unlink('composer-setup.php');" && \
 mv -v /var/app/composer.phar /usr/bin/composer && \
 chmod 755 /usr/bin/composer
 
-RUN chown -Rf 1000.1000 /var/app/*
-
 FROM development as test
 ENV APP_ENV=prod
 ADD bin/ ./bin
