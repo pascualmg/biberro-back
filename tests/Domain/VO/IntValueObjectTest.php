@@ -30,7 +30,7 @@ class IntValueObjectTest extends TestCase
         $foo =IntValueObject::fromString("42");
         $bar =StringValueObject::from("42");
 
-        assertFalse($bar->equals($foo));
+        $this->assertFalse($bar->equals($foo));
     }
 
 
