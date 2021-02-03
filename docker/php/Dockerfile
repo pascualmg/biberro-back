@@ -27,9 +27,6 @@ php -r "unlink('composer-setup.php');" && \
 mv -v /var/app/composer.phar /usr/bin/composer && \
 chmod 755 /usr/bin/composer
 
-#phpunit , symfony way as root
-RUN composer require --dev symfony/phpunit-bridge
-#fix the owner :S
 RUN chown -Rf 1000.1000 /var/app/*
 
 FROM development as test
