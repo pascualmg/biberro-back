@@ -16,8 +16,8 @@ services:
     networks:
       - network_biberro_service
 
-  php-fpm:
-    container_name: biberro-fpm
+  php-fpm
+    container_name: biberro-php
     build:
       context: .
       dockerfile: docker/php/Dockerfile
