@@ -4,8 +4,98 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "0827624c13de234f18bfd0f5cc7f50ce",
+    "content-hash": "47c3b42556854c6ef5ed8d93f34e0988",
     "packages": [
+        {
+            "name": "pascualmg/assert",
+            "version": "dev-main",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/pascualmg/assert.git",
+                "reference": "bc053536b979aadf558ad19f621e9d8dda7e10ab"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/pascualmg/assert/zipball/bc053536b979aadf558ad19f621e9d8dda7e10ab",
+                "reference": "bc053536b979aadf558ad19f621e9d8dda7e10ab",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=8.0.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": ">=9.5.2"
+            },
+            "default-branch": true,
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "pascualmg\\assert\\": "src/",
+                    "pascualmg\\assert\\test\\": "tests/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "LGPL-3.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "pascual",
+                    "email": "pascual.munoz@pccomponentes.com"
+                }
+            ],
+            "description": "lightweight and versatile assert library focused in your custom lamdas",
+            "support": {
+                "issues": "https://github.com/pascualmg/assert/issues",
+                "source": "https://github.com/pascualmg/assert/tree/main"
+            },
+            "time": "2021-02-06T14:23:10+00:00"
+        },
+        {
+            "name": "pascualmg/ddd-finitions",
+            "version": "dev-main",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/pascualmg/ddd-finitions.git",
+                "reference": "fdd186d57565867349633b1de01cc9e2993eb5e0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/pascualmg/ddd-finitions/zipball/fdd186d57565867349633b1de01cc9e2993eb5e0",
+                "reference": "fdd186d57565867349633b1de01cc9e2993eb5e0",
+                "shasum": ""
+            },
+            "require": {
+                "pascualmg/assert": "dev-main",
+                "php": ">=8.0.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": ">=9.5.2"
+            },
+            "default-branch": true,
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "pascualmg\\dddfinitions\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "LGPL-3.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "pascual",
+                    "email": "pascual.munoz@pccomponentes.com"
+                }
+            ],
+            "description": "not yet",
+            "support": {
+                "issues": "https://github.com/pascualmg/ddd-finitions/issues",
+                "source": "https://github.com/pascualmg/ddd-finitions/tree/main"
+            },
+            "time": "2021-02-07T09:25:10+00:00"
+        },
         {
             "name": "psr/cache",
             "version": "1.0.1",
@@ -4607,11 +4697,13 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {
+        "pascualmg/ddd-finitions": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
-        "php": ">=8.0",
+        "php": ">=8.0.0",
         "ext-ctype": "*",
         "ext-iconv": "*"
     },

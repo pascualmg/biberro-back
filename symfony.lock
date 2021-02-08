@@ -8,6 +8,12 @@
     "nikic/php-parser": {
         "version": "v4.10.4"
     },
+    "pascualmg/assert": {
+        "version": "dev-main"
+    },
+    "pascualmg/ddd-finitions": {
+        "version": "dev-main"
+    },
     "phar-io/manifest": {
         "version": "2.0.1"
     },

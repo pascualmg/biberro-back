@@ -16,7 +16,7 @@ services:
     networks:
       - network_biberro_service
 
-  php-fpm
+  php-fpm:
     container_name: biberro-php
     build:
       context: .
