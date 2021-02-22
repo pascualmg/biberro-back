@@ -1,7 +1,7 @@
 <?php
 
 
-namespace App\Domain\Model\Biberro\VO;
+namespace App\Domain\Model\FeedingBottle\VO;
 
 
 use pascualmg\dddfinitions\Domain\VO\IntValueObject;

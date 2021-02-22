@@ -1,12 +1,12 @@
 <?php
 
 
-namespace App\Domain\Model\Biberro;
+namespace App\Domain\Model\FeedingBottle;
 
 
 use App\Domain\Model\Baby\VO\BabyId;
-use App\Domain\Model\Biberro\VO\FeedingBottleId;
-use App\Domain\Model\Biberro\VO\Scoops;
+use App\Domain\Model\FeedingBottle\VO\FeedingBottleId;
+use App\Domain\Model\FeedingBottle\VO\Scoops;
 use pascualmg\dddfinitions\Domain\Entity;
 use pascualmg\dddfinitions\Domain\VO\AtomDate;
 use pascualmg\dddfinitions\Domain\VO\Uuid;
