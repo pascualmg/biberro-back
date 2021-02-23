@@ -1,10 +1,11 @@
 <?php
 
 
-namespace App\Domain\Model\Baby\VO;
+namespace Pascualmg\biberro\Domain\Model\Baby\VO;
 
 
-use pascualmg\dddfinitions\Domain\VO\Uuid;
+
+use Pascualmg\dddfinitions\Domain\VO\Uuid;
 
 class BabyId extends Uuid
 {

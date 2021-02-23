@@ -1,10 +1,10 @@
 <?php
 
 
-namespace App\Domain\Model\FeedingBottle\VO;
+namespace Pascualmg\biberro\Domain\Model\FeedingBottle\VO;
 
 
-use pascualmg\dddfinitions\Domain\VO\IntValueObject;
+use Pascualmg\dddfinitions\Domain\VO\IntValueObject;
 
 class Scoops extends IntValueObject
 {

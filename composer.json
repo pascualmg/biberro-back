@@ -27,12 +27,12 @@
     },
     "autoload": {
         "psr-4": {
-            "App\\": "src/"
+            "Pascualmg\\biberro\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "App\\Tests\\": "tests/"
+            "Pascualmg\\Tests\\": "tests/"
         }
     },
     "replace": {

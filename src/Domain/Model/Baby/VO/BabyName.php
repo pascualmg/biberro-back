@@ -1,10 +1,10 @@
 <?php
 
 
-namespace App\Domain\Model\Baby\VO;
+namespace Pascualmg\biberro\Domain\Model\Baby\VO;
 
 
-use pascualmg\dddfinitions\Domain\VO\StringValueObject;
+use Pascualmg\dddfinitions\Domain\VO\StringValueObject;
 
 class BabyName extends StringValueObject
 {

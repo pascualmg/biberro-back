@@ -1,10 +1,10 @@
 <?php
 
 
-namespace App\Domain\Model\Baby;
+namespace Pascualmg\biberro\Domain\Model\Baby;
 
 
-use pascualmg\dddfinitions\Domain\Bus\Event\DomainEvent;
+use Pascualmg\dddfinitions\Domain\Bus\Event\DomainEvent;
 
 class BabyDrunkOneFeedingBottle extends DomainEvent
 {

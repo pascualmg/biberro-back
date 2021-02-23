@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Infrastructure\Framework\Symfony;
+namespace pascualmg\biberro\Infrastructure\Framework\Symfony;
 
 use Symfony\Bundle\FrameworkBundle\Kernel\MicroKernelTrait;
 use Symfony\Component\DependencyInjection\Loader\Configurator\ContainerConfigurator;

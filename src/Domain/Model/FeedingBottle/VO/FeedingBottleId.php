@@ -1,10 +1,10 @@
 <?php
 
 
-namespace App\Domain\Model\FeedingBottle\VO;
+namespace Pascualmg\biberro\Domain\Model\FeedingBottle\VO;
 
 
-use pascualmg\dddfinitions\Domain\VO\Uuid;
+use Pascualmg\dddfinitions\Domain\VO\Uuid;
 
 class FeedingBottleId extends Uuid
 {

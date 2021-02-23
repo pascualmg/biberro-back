@@ -68,12 +68,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/pascualmg/assert.git",
-                "reference": "b742885f41697c460e264cd9e0ddfb22fd57f328"
+                "reference": "26e7f47dbb720e6a9de98fc48cd9ccd5a003b1aa"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/pascualmg/assert/zipball/b742885f41697c460e264cd9e0ddfb22fd57f328",
-                "reference": "b742885f41697c460e264cd9e0ddfb22fd57f328",
+                "url": "https://api.github.com/repos/pascualmg/assert/zipball/26e7f47dbb720e6a9de98fc48cd9ccd5a003b1aa",
+                "reference": "26e7f47dbb720e6a9de98fc48cd9ccd5a003b1aa",
                 "shasum": ""
             },
             "require": {
@@ -86,8 +86,7 @@
             "type": "library",
             "autoload": {
                 "psr-4": {
-                    "pascualmg\\assert\\": "src/",
-                    "pascualmg\\assert\\test\\": "tests/"
+                    "Pascualmg\\assert\\": "src/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -105,7 +104,7 @@
                 "issues": "https://github.com/pascualmg/assert/issues",
                 "source": "https://github.com/pascualmg/assert/tree/main"
             },
-            "time": "2021-02-08T02:40:20+00:00"
+            "time": "2021-02-23T14:44:22+00:00"
         },
         {
             "name": "pascualmg/ddd-finitions",
@@ -113,12 +112,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/pascualmg/ddd-finitions.git",
-                "reference": "12e7da7e2f31766aa65fe7d167fa8f127ef5d2c8"
+                "reference": "6f54736b175e21a694d9b6352a0e0b6abdabeca0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/pascualmg/ddd-finitions/zipball/12e7da7e2f31766aa65fe7d167fa8f127ef5d2c8",
-                "reference": "12e7da7e2f31766aa65fe7d167fa8f127ef5d2c8",
+                "url": "https://api.github.com/repos/pascualmg/ddd-finitions/zipball/6f54736b175e21a694d9b6352a0e0b6abdabeca0",
+                "reference": "6f54736b175e21a694d9b6352a0e0b6abdabeca0",
                 "shasum": ""
             },
             "require": {
@@ -133,7 +132,7 @@
             "type": "library",
             "autoload": {
                 "psr-4": {
-                    "pascualmg\\dddfinitions\\": "src/"
+                    "Pascualmg\\dddfinitions\\": "src/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -142,7 +141,7 @@
             ],
             "authors": [
                 {
-                    "name": "pascual",
+                    "name": "Pascual Muñoz Galián",
                     "email": "pascual.munoz@pccomponentes.com"
                 }
             ],
@@ -151,7 +150,7 @@
                 "issues": "https://github.com/pascualmg/ddd-finitions/issues",
                 "source": "https://github.com/pascualmg/ddd-finitions/tree/main"
             },
-            "time": "2021-02-17T22:53:04+00:00"
+            "time": "2021-02-23T13:58:03+00:00"
         },
         {
             "name": "psr/cache",
@@ -3075,16 +3074,16 @@
         },
         {
             "name": "phar-io/version",
-            "version": "3.0.4",
+            "version": "3.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phar-io/version.git",
-                "reference": "e4782611070e50613683d2b9a57730e9a3ba5451"
+                "reference": "bae7c545bef187884426f042434e561ab1ddb182"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phar-io/version/zipball/e4782611070e50613683d2b9a57730e9a3ba5451",
-                "reference": "e4782611070e50613683d2b9a57730e9a3ba5451",
+                "url": "https://api.github.com/repos/phar-io/version/zipball/bae7c545bef187884426f042434e561ab1ddb182",
+                "reference": "bae7c545bef187884426f042434e561ab1ddb182",
                 "shasum": ""
             },
             "require": {
@@ -3120,9 +3119,9 @@
             "description": "Library for handling version information and constraints",
             "support": {
                 "issues": "https://github.com/phar-io/version/issues",
-                "source": "https://github.com/phar-io/version/tree/3.0.4"
+                "source": "https://github.com/phar-io/version/tree/3.1.0"
             },
-            "time": "2020-12-13T23:18:30+00:00"
+            "time": "2021-02-23T14:00:09+00:00"
         },
         {
             "name": "phpdocumentor/reflection-common",

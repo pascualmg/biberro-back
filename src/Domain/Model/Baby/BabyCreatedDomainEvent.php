@@ -1,12 +1,10 @@
 <?php
 
 
-namespace App\Domain\Model\Baby;
+namespace Pascualmg\biberro\Domain\Model\Baby;
 
 
-use App\Domain\Model\Baby\VO\BabyName;
-use JetBrains\PhpStorm\ArrayShape;
-use JetBrains\PhpStorm\Pure;
+use Pascualmg\biberro\Domain\Model\Baby\VO\BabyName;
 use pascualmg\dddfinitions\Domain\Bus\Event\DomainEvent;
 
 class BabyCreatedDomainEvent extends DomainEvent
@@ -34,7 +32,6 @@ class BabyCreatedDomainEvent extends DomainEvent
         return 'baby.created';
     }
 
-    #[Pure] #[ArrayShape(['id' => "string", 'name' => "string"])]
     public function toPrimitives(): array
     {
         return [

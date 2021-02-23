@@ -1,13 +1,12 @@
 <?php
 
 
-namespace App\Domain\Model\Baby;
+namespace Pascualmg\biberro\Domain\Model\Baby;
 
 
-use App\Domain\Model\Baby\VO\BabyId;
-use App\Domain\Model\Baby\VO\BabyName;
-use App\Domain\Model\FeedingBottle\FeedingBottle;
-use pascualmg\dddfinitions\Domain\AggregateRoot;
+use Pascualmg\biberro\Domain\Model\Baby\VO\BabyName;
+use pascualmg\biberro\Domain\Model\FeedingBottle\FeedingBottle;
+use Pascualmg\dddfinitions\Domain\AggregateRoot;
 
 final class Baby extends AggregateRoot
 {
