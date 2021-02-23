@@ -5,7 +5,7 @@ namespace Pascualmg\biberro\Domain\Model\Baby;
 
 
 use Pascualmg\biberro\Domain\Model\Baby\VO\BabyName;
-use pascualmg\dddfinitions\Domain\Bus\Event\DomainEvent;
+use Pascualmg\dddfinitions\Domain\Bus\Event\DomainEvent;
 
 class BabyCreatedDomainEvent extends DomainEvent
 {

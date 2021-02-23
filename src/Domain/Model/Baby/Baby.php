@@ -4,6 +4,7 @@
 namespace Pascualmg\biberro\Domain\Model\Baby;
 
 
+use Pascualmg\biberro\Domain\Model\Baby\VO\BabyId;
 use Pascualmg\biberro\Domain\Model\Baby\VO\BabyName;
 use pascualmg\biberro\Domain\Model\FeedingBottle\FeedingBottle;
 use Pascualmg\dddfinitions\Domain\AggregateRoot;

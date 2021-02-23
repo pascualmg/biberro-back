@@ -112,12 +112,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/pascualmg/ddd-finitions.git",
-                "reference": "6f54736b175e21a694d9b6352a0e0b6abdabeca0"
+                "reference": "b077d509be6f0f7ee31ccdb8f84b7dd5609c98fa"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/pascualmg/ddd-finitions/zipball/6f54736b175e21a694d9b6352a0e0b6abdabeca0",
-                "reference": "6f54736b175e21a694d9b6352a0e0b6abdabeca0",
+                "url": "https://api.github.com/repos/pascualmg/ddd-finitions/zipball/b077d509be6f0f7ee31ccdb8f84b7dd5609c98fa",
+                "reference": "b077d509be6f0f7ee31ccdb8f84b7dd5609c98fa",
                 "shasum": ""
             },
             "require": {
@@ -150,7 +150,7 @@
                 "issues": "https://github.com/pascualmg/ddd-finitions/issues",
                 "source": "https://github.com/pascualmg/ddd-finitions/tree/main"
             },
-            "time": "2021-02-23T13:58:03+00:00"
+            "time": "2021-02-23T19:19:25+00:00"
         },
         {
             "name": "psr/cache",
