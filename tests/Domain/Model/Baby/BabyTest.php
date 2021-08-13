@@ -30,6 +30,8 @@ class BabyTest extends TestCase
 
         $dumper = new class implements DomainEventSubscriber {
 
+            public bool $dispatched = false;
+
             public function subscribedToEvent(): array
             {
                 return [BabyCreatedDomainEvent::class];
@@ -37,6 +39,7 @@ class BabyTest extends TestCase
 
             public function __invoke(DomainEvent $domainEvent)
             {
+                $this->dispatched = true;
                 dump($domainEvent);
             }
         };
@@ -44,6 +47,7 @@ class BabyTest extends TestCase
         $this->domainEventBus->dispatch(...$Adel->popAndFlushAllDomainEvents());
 
 
+        self::assertTrue($dumper->dispatched);
 
 
     }
