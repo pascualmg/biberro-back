@@ -48,8 +48,6 @@ class BabyTest extends TestCase
 
 
         self::assertTrue($dumper->dispatched);
-
-
     }
 
     protected function setUp(): void
@@ -61,26 +59,37 @@ class BabyTest extends TestCase
 
             public function __construct(DomainEventSubscriber ...$subscribers)
             {
-               $this->subscribers  = $subscribers;
+                $this->subscribers = $subscribers;
             }
 
             public function dispatch(DomainEvent ...$domainEvents): void
             {
-                foreach ($domainEvents as $domainEvent) {
-                    /** @var DomainEventSubscriber $subscriber */
-                    foreach ($this->subscribers as $subscriber) {
-                        if (in_array($domainEvent::class, $subscriber->subscribedToEvent())) {
-                            $subscriber($domainEvent);
-                        }
+                function feach(iterable $list, callable $fn)
+                {
+                    foreach ($list as $item) {
+                        $fn($item);
                     }
                 }
+
+                feach(
+                    $domainEvents,
+                    fn(DomainEvent $domainEvent) => feach(
+                        array_filter(
+                            $this->subscribers,
+                            fn(DomainEventSubscriber $subscriber) => in_array(
+                                $domainEvent::class,
+                                $subscriber->subscribedToEvent()
+                            )
+                        ),
+                        fn(DomainEventSubscriber $subscriberToDispatch) => $subscriberToDispatch($domainEvent)
+                    )
+                );
             }
 
             public function subscribe(DomainEventSubscriber ...$domainEventSubscribers): void
             {
-                $this->subscribers = array_merge($this->subscribers , $domainEventSubscribers);
+                $this->subscribers = array_merge($this->subscribers, $domainEventSubscribers);
             }
         };
     }
-
 }
