@@ -27,7 +27,24 @@ class BabyTest extends TestCase
     public function test_given_when_then()
     {
         $Adel = Baby::create(BabyId::random(), BabyName::from('Adel Muñoz Ruiz'));
+
+        $dumper = new class implements DomainEventSubscriber {
+
+            public function subscribedToEvent(): array
+            {
+                return [BabyCreatedDomainEvent::class];
+            }
+
+            public function __invoke(DomainEvent $domainEvent)
+            {
+                dump($domainEvent);
+            }
+        };
+        $this->domainEventBus->subscribe($dumper);
         $this->domainEventBus->dispatch(...$Adel->popAndFlushAllDomainEvents());
+
+
+
 
     }
 
@@ -36,19 +53,28 @@ class BabyTest extends TestCase
         parent::setUp();
         $this->domainEventBus = new class implements DomainEventBus {
             /** @var array DomainEventSubscriber */
-            private array $subscribers = [];
+            private array $subscribers;
+
+            public function __construct(DomainEventSubscriber ...$subscribers)
+            {
+               $this->subscribers  = $subscribers;
+            }
 
             public function dispatch(DomainEvent ...$domainEvents): void
             {
-//                foreach ($domainEvents as $domainEvent) {
-//                    /** @var DomainEventSubscriber $subscriber */
-//                    foreach ($this->subscribers as $subscriber) {
-//                        if (in_array($domainEvent::class, $subscriber->subscribedToEvent())) {
-//                            $subscriber($domainEvent);
-//                        }
-//                    }
-//                    dump($domainEvent);
-//                }
+                foreach ($domainEvents as $domainEvent) {
+                    /** @var DomainEventSubscriber $subscriber */
+                    foreach ($this->subscribers as $subscriber) {
+                        if (in_array($domainEvent::class, $subscriber->subscribedToEvent())) {
+                            $subscriber($domainEvent);
+                        }
+                    }
+                }
+            }
+
+            public function subscribe(DomainEventSubscriber ...$domainEventSubscribers): void
+            {
+                $this->subscribers = array_merge($this->subscribers , $domainEventSubscribers);
             }
         };
     }
