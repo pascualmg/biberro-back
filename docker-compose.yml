@@ -29,6 +29,8 @@ services:
       - ~/.composer:/.composer
     networks:
       - network_biberro_service
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
 #
 #  swagger:
 #    container_name: biberro-swagger
