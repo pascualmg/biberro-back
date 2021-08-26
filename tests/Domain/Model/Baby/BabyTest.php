@@ -6,6 +6,7 @@ use Pascualmg\biberro\Domain\Model\Baby\Baby;
 use Pascualmg\biberro\Domain\Model\Baby\BabyCreatedDomainEvent;
 use Pascualmg\biberro\Domain\Model\Baby\VO\BabyId;
 use Pascualmg\biberro\Domain\Model\Baby\VO\BabyName;
+use Pascualmg\biberro\Infrastructure\Bus\MemEventBus;
 use Pascualmg\dddfinitions\Domain\Bus\Event\DomainEvent;
 use Pascualmg\dddfinitions\Domain\Bus\Event\DomainEventBus;
 use Pascualmg\dddfinitions\Domain\Bus\Event\DomainEventSubscriber;
@@ -53,43 +54,6 @@ class BabyTest extends TestCase
     protected function setUp(): void
     {
         parent::setUp();
-        $this->domainEventBus = new class implements DomainEventBus {
-            /** @var array DomainEventSubscriber */
-            private array $subscribers;
-
-            public function __construct(DomainEventSubscriber ...$subscribers)
-            {
-                $this->subscribers = $subscribers;
-            }
-
-            public function dispatch(DomainEvent ...$domainEvents): void
-            {
-                function feach(iterable $list, callable $fn)
-                {
-                    foreach ($list as $item) {
-                        $fn($item);
-                    }
-                }
-
-                feach(
-                    $domainEvents,
-                    fn(DomainEvent $domainEvent) => feach(
-                        array_filter(
-                            $this->subscribers,
-                            fn(DomainEventSubscriber $subscriber) => in_array(
-                                $domainEvent::class,
-                                $subscriber->subscribedToEvent()
-                            )
-                        ),
-                        fn(DomainEventSubscriber $subscriberToDispatch) => $subscriberToDispatch($domainEvent)
-                    )
-                );
-            }
-
-            public function subscribe(DomainEventSubscriber ...$domainEventSubscribers): void
-            {
-                $this->subscribers = array_merge($this->subscribers, $domainEventSubscribers);
-            }
-        };
+        $this->domainEventBus =  new MemEventBus();
     }
 }
